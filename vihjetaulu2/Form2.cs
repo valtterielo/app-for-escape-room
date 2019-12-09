@@ -11,72 +11,78 @@ using System.Windows.Forms;
 
 namespace vihjetaulu2
 {
-    public partial class Form2 : Form
+    public partial class Hakusivu : Form
     {
         
         public string syote;
+        public int _ticks;
 
-        public Form2()
+
+        public Hakusivu()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            kentta.Text += "1";
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-            kentta.Text += "8";
+            hakukentta.Text += "1";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            kentta.Text += "2";
+            hakukentta.Text += "2";
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            kentta.Text += "3";
+            hakukentta.Text += "3";
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            kentta.Text += "4";
+            hakukentta.Text += "4";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            kentta.Text += "5";
+            hakukentta.Text += "5";
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            kentta.Text += "6";
+            hakukentta.Text += "6";
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            kentta.Text += "7";
+            hakukentta.Text += "7";
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            hakukentta.Text += "8";
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            kentta.Text += "9";
+            hakukentta.Text += "9";
         }
 
         private void button0_Click(object sender, EventArgs e)
         {
-            kentta.Text += "0";
+            hakukentta.Text += "0";
         }
 
         private void vihje_Click(object sender, EventArgs e)
         {
-            Form1 vastaus = new Form1();
-            syote = kentta.Text;
-            string polku = "C:\\Users\\Valtteri\\Desktop\\vihjeita\\" + syote + ".txt";
+            Tulossivu vastaus = new Tulossivu();
 
+            //ajastin käynnistyy vihjenappia painettaessa ja määrittää sen, kuinka usein vihjeitä voidaan hakea
+            timer1.Enabled = true;
+            progressBar.Value = 0;
+            syote = hakukentta.Text;
+
+            string polku = "C:\\Users\\Valtteri\\Desktop\\vihjeita\\" + syote + ".txt";
 
             try
             {
@@ -88,23 +94,49 @@ namespace vihjetaulu2
             }
             catch (Exception)
             {
-                vastaus.setTeksti("Tapahtui virhe ");
+                vastaus.setTeksti("Tunnusta vastaavaa vihjettä ei löytynyt ");
             }
 
-            this.Hide();
+            //vastaus näytetään erillisessä "vastausikkunassa"
             vastaus.ShowDialog();
-            this.Close();
-            
         }
 
         private void nollaa_Click(object sender, EventArgs e)
         {
-            kentta.Text = "";
+            hakukentta.Text = "";
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
+            _ticks++;
+
+            //ajastin asetettu tällä hetkellä 15 sekunttiin projektin demoamista varten, normaali arvo olisi 600
+
+            if (_ticks >= 15)
+            {
+                timer1.Enabled = false;
+                _ticks = 0;
+            }
+
+            if (progressBar.Value < 15)
+            {
+                progressBar.Value += 1;
+            }
+            else
+            {
+                timer1.Stop();
+            }
+
+            if (timer1.Enabled)
+            {
+                vihje.Enabled = false;
+            }
+            else
+            {
+                vihje.Enabled = true;
+            }
 
         }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace vihjetaulu2
 {
-    partial class Form2
+    partial class Hakusivu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.kentta = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.hakukentta = new System.Windows.Forms.TextBox();
+            this.tausta = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -42,24 +43,25 @@
             this.button0 = new System.Windows.Forms.Button();
             this.vihje = new System.Windows.Forms.Button();
             this.nollaa = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
-            // kentta
+            // hakukentta
             // 
-            this.kentta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kentta.Location = new System.Drawing.Point(12, 12);
-            this.kentta.Name = "kentta";
-            this.kentta.Size = new System.Drawing.Size(786, 44);
-            this.kentta.TabIndex = 0;
-            this.kentta.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.hakukentta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hakukentta.Location = new System.Drawing.Point(12, 12);
+            this.hakukentta.Name = "hakukentta";
+            this.hakukentta.Size = new System.Drawing.Size(786, 44);
+            this.hakukentta.TabIndex = 0;
             // 
-            // label1
+            // tausta
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(12, 76);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(791, 434);
-            this.label1.TabIndex = 2;
+            this.tausta.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tausta.Location = new System.Drawing.Point(12, 76);
+            this.tausta.Name = "tausta";
+            this.tausta.Size = new System.Drawing.Size(791, 434);
+            this.tausta.TabIndex = 2;
             // 
             // button1
             // 
@@ -193,11 +195,25 @@
             this.nollaa.UseVisualStyleBackColor = true;
             this.nollaa.Click += new System.EventHandler(this.nollaa_Click);
             // 
-            // Form2
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(651, 456);
+            this.progressBar.Maximum = 15;
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(118, 30);
+            this.progressBar.TabIndex = 16;
+            // 
+            // Hakusivu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(810, 519);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.nollaa);
             this.Controls.Add(this.vihje);
             this.Controls.Add(this.button0);
@@ -210,9 +226,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.kentta);
-            this.Name = "Form2";
+            this.Controls.Add(this.tausta);
+            this.Controls.Add(this.hakukentta);
+            this.Name = "Hakusivu";
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -221,8 +237,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox kentta;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox hakukentta;
+        private System.Windows.Forms.Label tausta;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -235,5 +251,7 @@
         private System.Windows.Forms.Button button0;
         private System.Windows.Forms.Button vihje;
         private System.Windows.Forms.Button nollaa;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }

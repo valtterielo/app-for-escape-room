@@ -2,7 +2,7 @@
 
 namespace vihjetaulu2
 {
-    partial class Form1
+    partial class Tulossivu
     {
         /// <summary>
         /// Required designer variable.
@@ -38,13 +38,12 @@ namespace vihjetaulu2
             // 
             this.Vihje.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Vihje.Location = new System.Drawing.Point(22, 13);
-            this.Vihje.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Vihje.Margin = new System.Windows.Forms.Padding(4);
             this.Vihje.Multiline = true;
             this.Vihje.Name = "Vihje";
             this.Vihje.ReadOnly = true;
             this.Vihje.Size = new System.Drawing.Size(762, 437);
             this.Vihje.TabIndex = 2;
-            this.Vihje.TextChanged += new System.EventHandler(this.Vihje_TextChanged);
             // 
             // ok
             // 
@@ -57,7 +56,7 @@ namespace vihjetaulu2
             this.ok.UseVisualStyleBackColor = true;
             this.ok.Click += new System.EventHandler(this.ok_Click);
             // 
-            // Form1
+            // Tulossivu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -66,10 +65,9 @@ namespace vihjetaulu2
             this.ClientSize = new System.Drawing.Size(810, 519);
             this.Controls.Add(this.ok);
             this.Controls.Add(this.Vihje);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Tulossivu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
