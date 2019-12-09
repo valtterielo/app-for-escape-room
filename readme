@@ -1,5 +1,5 @@
 Created for Haaga-Helia's escape room
-Designed for raspberry pi 3 with a 3.5 inch touch screen
-Can fetch contents of text files (clues) that escape room's administrators can create to a separate folder
--Need to implement a timer (user can get a clue every five minutes)
--Need to change the path to match the folder's path on raspberry pi, that contains all the clues
+Designed for a raspberry pi 3 with a 3.5 inch touch screen
+Can fetch contents of text files (clues) that the escape room's administrators can create into a separate folder
+Escape room's players can use the app to obtain clues based on their current objective if they can't advance on their own
+
