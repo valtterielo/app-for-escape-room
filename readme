@@ -1,4 +1,4 @@
-Created for Haaga-Helia's escape room
+Created for Haaga-Helia's escape room using visual studio
 Designed for a raspberry pi 3 with a 3.5 inch touch screen
 Can fetch contents of text files (clues) that the escape room's administrators can create into a separate folder
 Escape room's players can use the app to obtain clues based on their current objective if they can't advance on their own
